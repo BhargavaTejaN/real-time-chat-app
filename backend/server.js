@@ -26,16 +26,16 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+//app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/messages", messageRoutes);
 app.use("/api/v1/users", userRoutes);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+// });
 
 const connect = async () => {
   try {
